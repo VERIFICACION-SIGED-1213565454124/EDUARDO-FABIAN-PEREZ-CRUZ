@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f8f8;
     
-    /* MODIFICACIÓN CLAVE PARA CENTRAR TODO EL CONTENIDO */
+    /* MODIFICACIÓN PARA CENTRADO TOTAL */
     display: flex;
     justify-content: center; /* Centrado horizontal */
     align-items: center; /* Centrado vertical */
@@ -25,7 +25,7 @@ body {
     text-align: center;
 }
 
-/* Contenedor de la Imagen Superior (Escudo, Logo y Bandera) */
+/* Contenedor de la Imagen Superior */
 .imagen-superior {
     margin-bottom: 30px;
     padding: 0 10px;
