@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal que simula el certificado */
+.certificado {
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px; 
+    text-align: center;
+}
+
+/* Contenedor de la Imagen Superior (Escudo, Logo y Bandera) */
+.imagen-superior {
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.imagen-superior img {
+    max-width: 100%; 
+    height: auto;
+    /* Ajusta si es necesario para simular el aspecto original */
+    object-fit: cover;
+}
+
+/* Sección de datos */
+.datos-seccion {
+    text-align: left;
+    padding: 0 20px;
+}
+
+.datos-seccion h2 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    /* El borde inferior que se ve en la imagen */
+    border-bottom: 1px solid #333; 
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dato-fila {
+    display: flex;
+    flex-wrap: wrap; 
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.etiqueta {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #333;
+    flex-shrink: 0;
+}
+
+.valor {
+    font-weight: 400;
+    font-size: 1.1em;
+    margin-left: 5px;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.nombre-alumno {
+    font-weight: 700; 
+}
+
+/* Estilo específico para el ESTATUS 'VALIDO REGISTRADO' en rojo */
+.estatus-valido {
+    color: #d9534f; 
+    font-weight: 700;
+}
+
+/* Media Query para responsividad en móviles */
+@media (max-width: 600px) {
+    .certificado {
+        padding: 20px 10px;
+    }
+    
+    .etiqueta, .valor {
+        font-size: 1em;
+    }
+}
