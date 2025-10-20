@@ -1,154 +1,177 @@
+/* Variables de color para fácil mantenimiento */
+:root {
+    --primary-color: #007bff; /* Azul vibrante para los botones */
+    --secondary-color: #6c757d; /* Gris para el contraste */
+    --background-color: #f4f7f6; /* Fondo suave */
+    --card-background: #ffffff; /* Fondo de la tarjeta */
+    --text-color: #343a40; /* Texto principal oscuro */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos Globales y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-/* HEADER */
-header {
-  background-color: #0a2f2a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  color: white;
+/* Contenedor principal (La "Tarjeta" de perfil) */
+.profile-card {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 20px;
+.profile-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 
-.logo-left {
-  font-weight: bold;
+/* Imagen de Perfil */
+.profile-picture {
+    margin-bottom: 25px;
 }
 
-.logo-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
-.menu-icon {
-  font-size: 22px;
-  cursor: pointer;
+/* Texto */
+.name {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #212529;
 }
 
-/* SUBHEADER */
-.sub-header {
-  background-color: #00a3a6;
-  padding: 20px 30px;
-  color: white;
+.title {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 
-.sub-header h2 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: bold;
+.description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-/* BREADCRUMB */
-.breadcrumb {
-  font-size: 13px;
-  margin: 15px 30px;
-  color: #555;
+/* Contenedor de Botones/Enlaces */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-/* MAIN CONTAINER */
-.container {
-  background-color: white;
-  margin: 20px auto;
-  padding: 25px 30px;
-  max-width: 1000px;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+/* Estilo de Botón Base */
+.btn {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent; /* Para evitar el "salto" al hacer hover */
 }
 
-.container h2 {
-  color: #333;
-  font-size: 20px;
-  margin-bottom: 10px;
+/* Botón Primario */
+.btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
-.container h3 {
-  color: #444;
-  margin-bottom: 20px;
+.btn.primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
-/* DETAILS BOX */
-.details-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  border-top: 4px solid #b22222;
-  padding-top: 15px;
-  margin-bottom: 20px;
+/* Botón Secundario (Outline) */
+.btn.secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
-.icon {
-  font-size: 90px;
+.btn.secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
-.info p {
-  margin: 6px 0;
-  font-size: 15px;
+/* Enlaces Sociales (Iconos) */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.folio {
-  font-size: 13px;
-  color: #666;
-  margin-top: 10px;
+.social-links a {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.nota {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
 }
 
-/* FOOTER */
+/* Footer */
 footer {
-  background-color: #0a2f2a;
-  color: white;
-  padding: 40px 30px;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--secondary-color);
 }
 
-.footer-columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
+/* Media Query para responsividad en pantallas pequeñas */
+@media (max-width: 600px) {
+    .profile-card {
+        padding: 30px 20px;
+        margin: 10px;
+    }
 
-footer p {
-  margin: 6px 0;
-  font-size: 14px;
-}
+    .name {
+        font-size: 1.8em;
+    }
 
-footer a {
-  color: #c8f6f6;
-  text-decoration: none;
-}
+    .links-container {
+        gap: 10px;
+    }
 
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .sub-header h2 {
-    font-size: 18px;
-  }
-  .details-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .icon {
-    font-size: 60px;
-  }
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
 }
