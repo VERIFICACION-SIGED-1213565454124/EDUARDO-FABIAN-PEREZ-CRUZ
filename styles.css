@@ -2,10 +2,13 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f8f8;
+    
+    /* MODIFICACIÓN CLAVE PARA CENTRAR TODO EL CONTENIDO */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    min-height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
@@ -31,7 +34,6 @@ body {
 .imagen-superior img {
     max-width: 100%; 
     height: auto;
-    /* Ajusta si es necesario para simular el aspecto original */
     object-fit: cover;
 }
 
@@ -47,7 +49,6 @@ body {
     font-weight: 700;
     margin-bottom: 30px;
     padding-bottom: 5px;
-    /* El borde inferior que se ve en la imagen */
     border-bottom: 1px solid #333; 
     width: fit-content;
     margin-left: auto;
@@ -80,9 +81,9 @@ body {
     font-weight: 700; 
 }
 
-/* Estilo específico para el ESTATUS 'VALIDO REGISTRADO' en rojo */
+/* ESTILO PARA PONER "VALIDO REGISTRADO" EN ROJO */
 .estatus-valido {
-    color: #d9534f; 
+    color: #d9534f; /* Color rojo fuerte */
     font-weight: 700;
 }
 
