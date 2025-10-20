@@ -1,177 +1,135 @@
-/* Variables de color para fácil mantenimiento */
-:root {
-    --primary-color: #007bff; /* Azul vibrante para los botones */
-    --secondary-color: #6c757d; /* Gris para el contraste */
-    --background-color: #f4f7f6; /* Fondo suave */
-    --card-background: #ffffff; /* Fondo de la tarjeta */
-    --text-color: #343a40; /* Texto principal oscuro */
-    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Estilos Globales y Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* Estilos generales */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    font-family: 'Roboto', sans-serif; /* Usamos una fuente limpia */
+    background-color: #f8f8f8;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
     padding: 20px;
 }
 
-/* Contenedor principal (La "Tarjeta" de perfil) */
-.profile-card {
-    background-color: var(--card-background);
-    border-radius: 15px;
-    box-shadow: var(--shadow-light);
-    padding: 40px;
-    max-width: 500px;
+/* Contenedor principal que simula el certificado */
+.certificado {
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     width: 100%;
+    max-width: 600px; /* Tamaño similar al de un documento */
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px;
 }
 
-.profile-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
+/* Encabezado del gobierno */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
 }
 
-/* Imagen de Perfil */
-.profile-picture {
-    margin-bottom: 25px;
+.escudo {
+    width: 80px; /* Tamaño del escudo */
+    height: auto;
+    /* Estilo monocromático como en la imagen */
+    filter: grayscale(100%); 
+    opacity: 0.8;
 }
 
-.profile-picture img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 0 0 8px rgba(0, 123, 255, 0.2);
-}
-
-/* Texto */
-.name {
+.gob-title {
+    font-family: 'Playfair Display', serif; /* Usamos una fuente más elegante para el título */
     font-size: 2.2em;
     font-weight: 700;
-    margin-bottom: 5px;
-    color: #212529;
+    color: #5d0f1f; /* Color vino/tinto oscuro */
+    line-height: 1;
+    text-align: left;
 }
 
-.title {
-    font-size: 1.1em;
-    color: var(--secondary-color);
-    font-weight: 400;
-    margin-bottom: 20px;
+/* Imagen central */
+.imagen-central {
+    margin: 30px 0;
 }
 
-.description {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 30px;
+.imagen-central img {
+    /* **DEBES REEMPLAZAR ESTA IMAGEN** */
+    /* Estas propiedades son importantes para darle el aspecto de la imagen */
+    width: 100%; 
+    max-width: 300px;
+    height: auto;
+    filter: grayscale(100%); /* Ponerla en blanco y negro */
+    opacity: 0.9;
+    object-fit: cover;
 }
 
-/* Contenedor de Botones/Enlaces */
-.links-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 30px;
+/* Sección de datos */
+.datos-seccion {
+    text-align: left;
+    padding: 0 20px;
 }
 
-/* Estilo de Botón Base */
-.btn {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent; /* Para evitar el "salto" al hacer hover */
-}
-
-/* Botón Primario */
-.btn.primary {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.btn.primary:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
-}
-
-/* Botón Secundario (Outline) */
-.btn.secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn.secondary:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
-}
-
-/* Enlaces Sociales (Iconos) */
-.social-links {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-links a {
-    color: var(--secondary-color);
-    font-size: 1.8em;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
-
-/* Footer */
-footer {
-    padding: 15px;
-    width: 100%;
+.datos-seccion h2 {
     text-align: center;
-    font-size: 0.85em;
-    color: var(--secondary-color);
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
 }
 
-/* Media Query para responsividad en pantallas pequeñas */
-@media (max-width: 600px) {
-    .profile-card {
-        padding: 30px 20px;
-        margin: 10px;
-    }
+.dato-fila {
+    display: flex;
+    flex-wrap: wrap; /* Permite que el texto se envuelva en móviles */
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
 
-    .name {
+.etiqueta {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #333;
+    flex-shrink: 0; /* Evita que se encoja la etiqueta */
+}
+
+.valor {
+    font-weight: 400;
+    font-size: 1.1em;
+    margin-left: 5px;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.nombre-alumno {
+    /* Destacar el nombre si es necesario */
+    font-weight: 700; 
+}
+
+/* Estilo específico para el ESTATUS 'VALIDO REGISTRADO' */
+.estatus-valido {
+    color: #d9534f; /* Color rojo fuerte */
+    font-weight: 700;
+}
+
+/* Estilos para móviles */
+@media (max-width: 480px) {
+    .gob-title {
         font-size: 1.8em;
     }
 
-    .links-container {
+    .header {
         gap: 10px;
     }
 
-    .btn {
-        padding: 10px 15px;
-        font-size: 0.95em;
+    .escudo {
+        width: 60px;
+    }
+
+    .datos-seccion {
+        padding: 0 5px;
+    }
+    
+    .etiqueta, .valor {
+        font-size: 1em;
     }
 }
